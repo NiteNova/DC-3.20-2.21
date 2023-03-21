@@ -20,7 +20,9 @@ int main() {
 	birb Jevin(200, 300, Jcolor);
 	birb Tam(300, 300, Tcolor);
 	birb Alan(200, 400, Alcolor);
-	flower flow(400, 400, Alcolor);
+	flower f1(400, 400);
+	flower f2(500, 500);
+	flower f3(500, 300);
 
 	sf::RenderWindow window(sf::VideoMode(800, 800), "Happy Spring!"); //set up game window
 	srand(time(NULL));
@@ -35,7 +37,12 @@ int main() {
 			Alan.fly();
 		}
 		
-
+		int chance = rand() % 100;
+		if (random <= 5) {
+			f1.randomcolor();
+			f2.randomcolor();
+			f3.randomcolor();
+		}
 		window.clear();
 		Alex.draw(window);
 		Kevin.draw(window);
@@ -43,7 +50,9 @@ int main() {
 		Tam.draw(window);
 		Alan.draw(window);
 
-		flow.draw(window);
+		f1.draw(window);
+		f2.draw(window);
+		f3.draw(window);
 		window.display();
 	}
 }
